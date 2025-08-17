@@ -24,7 +24,7 @@ mkdir -p ./AppDir/shared/lib
 # DEPLOY ALL LIBS
 wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
 chmod +x ./quick-sharun
-GSK_RENDERER=cairo ./quick-sharun /usr/bin/rnote /usr/bin/rnote-cli
+./quick-sharun /usr/bin/rnote /usr/bin/rnote-cli
 
 ## Copy fonts used for rnote
 cp -vr /usr/share/fonts/rnote-fonts ./AppDir/share/fonts/
@@ -38,9 +38,6 @@ StartupWMClass=rnote
 
 ## Further debloat locale
 find ./AppDir/share/locale -type f ! -name '*glib*' ! -name '*rnote*' -delete
-
-## Force use of cairo backend
-echo "GSK_RENDERER=cairo" >> ./AppDir/.env
 
 # MAKE APPIMAGE WITH URUNTIME
 wget --retry-connrefused --tries=30 "$URUNTIME" -O ./uruntime2appimage
