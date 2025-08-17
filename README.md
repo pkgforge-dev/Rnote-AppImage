@@ -28,17 +28,3 @@ This appimage works without fuse2 as it can use fuse3 instead, it can also work 
 </details>
 
 More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/)
-
----
-
-## Known variance
-
-- Working directory in Workspace is the temporary AppImage one, instead of `$HOME`.  
-That is because we are patching the main binary to look into AppImage's `share` folder instead of the host's `/usr/share/`, which is required for locale/languages to work.  
-To workaround this issue, you can just create a new workspace with correct directory and delete the old one.
-
-<details>
-  <summary><b><i>This is how it looks like</i></b></summary>
-    <img width="1051" height="1008" alt="Screenshot From 2025-08-17 18-50-14" src="https://github.com/user-attachments/assets/97c76553-8c00-4649-a8a2-b50bc100506c" />
-  </a>
-</details>
