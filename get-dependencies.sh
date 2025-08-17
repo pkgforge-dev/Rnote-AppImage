@@ -36,10 +36,18 @@ pacman -Syu --noconfirm \
 	wget \
 	xorg-server-xvfb \
 	zsync
-echo "Installing the app & it's dependencies..."
+echo "Building the app & it's dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-	rnote \
+
+sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
+git clone https://gitlab.archlinux.org/archlinux/packaging/packages/rnote.git ./rnote && (
+	cd ./rnote
+	sed -i -e "s|x86_64|$ARCH|" ./PKGBUILD
+	makepkg -f
+	ls -la .
+	pacman --noconfirm -U *.pkg.tar.*
+)
+pacman -Syu --noconfirm
     mesa
 
 case "$ARCH" in
