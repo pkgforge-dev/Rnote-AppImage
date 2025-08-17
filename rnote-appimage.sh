@@ -41,7 +41,7 @@ StartupWMClass=rnote
 find ./AppDir/share/locale -type f ! -name '*glib*' ! -name '*rnote*' -delete
 
 ## Make locale directory recognizable in AppImage directory
-echo "TEXTDOMAINDIR=${SHARUN_DIR}/shared/locale" >> ./AppDir/.env
+echo 'TEXTDOMAINDIR=${SHARUN_DIR}/shared/locale' >> ./AppDir/.env
 
 # MAKE APPIMAGE WITH URUNTIME
 wget --retry-connrefused --tries=30 "$URUNTIME" -O ./uruntime2appimage
