@@ -42,7 +42,7 @@ StartupWMClass=rnote
 find ./AppDir/share/locale -type f ! -name '*glib*' ! -name '*rnote*' -delete
 
 ## Set gsettings to save to keyfile, instead to dconf
-echo "GSETTINGS_BACKEND=gconf" >> ./AppDir/.env
+echo "GSETTINGS_BACKEND=keyfile" >> ./AppDir/.env
 
 # MAKE APPIMAGE WITH URUNTIME
 wget --retry-connrefused --tries=30 "$URUNTIME" -O ./uruntime2appimage
