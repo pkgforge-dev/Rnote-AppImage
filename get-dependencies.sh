@@ -43,7 +43,9 @@ sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
 git clone https://gitlab.archlinux.org/archlinux/packaging/packages/rnote.git ./rnote && (
 	cd ./rnote
 	sed -i -e "s|x86_64|$ARCH|" ./PKGBUILD
-	makepkg -f --noconfirm
+        pacman -Syu --noconfirm gtk4 glib2 libadwaita poppler-glib gstreamer alsa-lib \
+	                        meson cargo cmake clang git
+	makepkg -f
 	ls -la .
 	pacman --noconfirm -U *.pkg.tar.*
 )
