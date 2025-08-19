@@ -22,7 +22,7 @@ jobs:
             arch: aarch64
     container: ghcr.io/pkgforge-dev/archlinux:latest
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
     - name: Get dependencies
       if: always()
@@ -41,13 +41,13 @@ jobs:
        echo "APP_VERSION=$(cat ~/version)" >> "${GITHUB_ENV}"
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4.6.2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
       with:
         name: AppImage-${{ matrix.arch }}
         path: 'dist'
 
     - name: Upload version file
-      uses: actions/upload-artifact@v4.6.2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
       with:
        name: version
        path: ~/version
@@ -60,15 +60,15 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/download-artifact@v5.0.0
+        - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
           with:
             name: AppImage-x86_64
 
-        - uses: actions/download-artifact@v5.0.0
+        - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
           with:
             name: AppImage-aarch64
 
-        - uses: actions/download-artifact@v5.0.0
+        - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
           with:
             name: version
 
@@ -78,7 +78,7 @@ jobs:
             echo "DATE=$(date +'%Y-%m-%d_%s')" >> "${GITHUB_ENV}"
 
         - name: Release Artifacts
-          uses: softprops/action-gh-release@v2.3.2
+          uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2.3.2
           with:
             name: "Rnote: ${{ env.VERSION }}"
             tag_name: "${{ env.VERSION }}@${{ env.DATE }}"
@@ -89,7 +89,7 @@ jobs:
             files: |
               *.AppImage*
 
-        - uses: actions/checkout@v5
+        - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         - name: Update LATEST_VERSION
           run: |
             echo "${{ env.VERSION }}" > ./LATEST_VERSION
