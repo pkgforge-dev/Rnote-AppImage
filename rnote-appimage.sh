@@ -19,6 +19,7 @@ export PATH_MAPPING_HARDCODED=1 # GTK applications are usually hardcoded to look
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
 export DEPLOY_LOCALE=1
+export STARTUPWMCLASS=rnote
 
 # Prepare AppDir
 mkdir -p ./AppDir/shared/lib
@@ -30,13 +31,6 @@ chmod +x ./quick-sharun
 
 ## Copy fonts used for rnote
 cp -vr /usr/share/fonts/rnote-fonts ./AppDir/share/fonts/
-
-## Patch StartupWMClass to work on X11
-## Doesn't work when ran in Wayland, as it's 'com.github.flxzt.rnote' instead.
-## It needs to be manually changed by the user in this case.
-sed -i '/^\[Desktop Entry\]/a\
-StartupWMClass=rnote
-' ./AppDir/*.desktop
 
 ## Further debloat locale
 find ./AppDir/share/locale -type f ! -name '*glib*' ! -name '*rnote*' -delete
