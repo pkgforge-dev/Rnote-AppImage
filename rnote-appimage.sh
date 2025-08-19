@@ -21,9 +21,6 @@ export DEPLOY_VULKAN=1
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=rnote
 
-# Prepare AppDir
-mkdir -p ./AppDir/shared/lib
-
 # DEPLOY ALL LIBS
 wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
 chmod +x ./quick-sharun
