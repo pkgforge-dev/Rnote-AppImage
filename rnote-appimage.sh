@@ -15,11 +15,9 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export OUTNAME="$PACKAGE"-"$VERSION"-anylinux-"$ARCH".AppImage
 export DESKTOP=/usr/share/applications/com.github.flxzt.rnote.desktop
 export ICON=/usr/share/icons/hicolor/scalable/apps/com.github.flxzt.rnote.svg
-export PATH_MAPPING_HARDCODED=1 # GTK applications are usually hardcoded to look into /usr/share, especially noticeable in non-working locale, hence why this is used
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
-export DEPLOY_LOCALE=1
-export STARTUPWMCLASS=rnote
+export STARTUPWMCLASS=rnote # For Wayland, this is 'com.github.flxzt.rnote', so this needs to be changed manually by the user until some potential automatic fix exists for this
 
 # DEPLOY ALL LIBS
 wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
