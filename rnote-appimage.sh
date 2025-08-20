@@ -17,7 +17,7 @@ export DESKTOP=/usr/share/applications/com.github.flxzt.rnote.desktop
 export ICON=/usr/share/icons/hicolor/scalable/apps/com.github.flxzt.rnote.svg
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
-export STARTUPWMCLASS=rnote # For Wayland, this is 'com.github.flxzt.rnote', so this needs to be changed manually by the user until some potential automatic fix exists for this
+export STARTUPWMCLASS=rnote # For Wayland, this is 'com.github.flxzt.rnote', so this needs to be changed in desktop file manually by the user in that case until some potential automatic fix exists for this
 
 # DEPLOY ALL LIBS
 wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
