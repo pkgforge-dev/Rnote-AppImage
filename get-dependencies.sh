@@ -40,21 +40,6 @@ git clone https://gitlab.archlinux.org/archlinux/packaging/packages/rnote.git ./
 	pacman --noconfirm -U *.pkg.tar.*
 )
 
-case "$ARCH" in
-	'x86_64')  
-		PKG_TYPE='x86_64.pkg.tar.zst'
-		pacman -Syu --noconfirm intel-media-driver libva-intel-driver vulkan-intel haskell-gnutls svt-av1
-		;;
-	'aarch64') 
-		PKG_TYPE='aarch64.pkg.tar.xz'
-		pacman -Syu --noconfirm vulkan-freedreno vulkan-panfrost
-		;;
-	''|*)      
-		echo "Unknown cpu arch: $ARCH" 
-		exit 1
-		;;
-esac
-
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 wget --retry-connrefused --tries=30 "$LIBXML_URL"  -O  ./libxml2-iculess.pkg.tar.zst
