@@ -21,7 +21,7 @@ export STARTUPWMCLASS=rnote # For Wayland, this is 'com.github.flxzt.rnote', so 
 # DEPLOY ALL LIBS
 wget --retry-connrefused --tries=30 "$SHARUN" -O ./quick-sharun
 chmod +x ./quick-sharun
-GSK_RENDERER=ngl ./quick-sharun /usr/bin/rnote /usr/bin/rnote-cli
+./quick-sharun /usr/bin/rnote /usr/bin/rnote-cli
 
 ## Copy fonts used for rnote
 cp -vr /usr/share/fonts/rnote-fonts ./AppDir/share/fonts/
@@ -31,9 +31,6 @@ find ./AppDir/share/locale -type f ! -name '*glib*' ! -name '*rnote*' -delete
 
 ## Set gsettings to save to keyfile, instead to dconf
 echo "GSETTINGS_BACKEND=keyfile" >> ./AppDir/.env
-
-## Force use of ngl backend, as Vulkan is problematic + it reduces the size of the AppImage
-echo "GSK_RENDERER=ngl" >> ./AppDir/.env
 
 # MAKE APPIMAGE WITH URUNTIME
 wget --retry-connrefused --tries=30 "$URUNTIME" -O ./uruntime2appimage
