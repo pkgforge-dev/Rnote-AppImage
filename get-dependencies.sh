@@ -6,12 +6,6 @@ sed -i 's/DownloadUser/#DownloadUser/g' /etc/pacman.conf
 
 ARCH="$(uname -m)"
 
-if [ "$ARCH" = 'x86_64' ]; then
-	PKG_TYPE="$ARCH.pkg.tar.zst"
-elif [ "$ARCH" = 'aarch64' ]; then
-	PKG_TYPE="$ARCH.pkg.tar.xz"
-fi
-
 DEBLOATED_PKGS_INSTALLER="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/get-debloated-pkgs.sh"
 
 echo "Installing build dependencies for sharun & AppImage integration..."
