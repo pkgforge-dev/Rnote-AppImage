@@ -21,7 +21,6 @@ pacman -Syu --noconfirm \
 	zsync
 echo "Building the app & it's dependencies..."
 echo "---------------------------------------------------------------"
-
 sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
 git clone https://gitlab.archlinux.org/archlinux/packaging/packages/rnote.git ./rnote && (
 	cd ./rnote
