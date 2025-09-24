@@ -32,7 +32,7 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 wget --retry-connrefused --tries=30 "$DEBLOATED_PKGS_INSTALLER" -O ./get-debloated-pkgs.sh
 chmod +x ./get-debloated-pkgs.sh
-./get-debloated-pkgs.sh libxml2-mini mesa-nano gtk4-mini
+./get-debloated-pkgs.sh libxml2-mini mesa-nano gtk4-mini gdk-pixbuf2-mini
 
 echo "Extracting the app version into a version file"
 echo "---------------------------------------------------------------"
