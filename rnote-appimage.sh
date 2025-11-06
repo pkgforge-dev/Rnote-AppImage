@@ -4,11 +4,11 @@ set -eux
 
 ARCH="$(uname -m)"
 PACKAGE=rnote
-URUNTIME="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/uruntime2appimage.sh"
 SHARUN="https://raw.githubusercontent.com/pkgforge-dev/Anylinux-AppImages/refs/heads/main/useful-tools/quick-sharun.sh"
 VERSION="$(cat ~/version)"
 
 # Variables used by quick-sharun
+export OUTPUT_APPIMAGE=1
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export OUTNAME="$PACKAGE"-"$VERSION"-anylinux-"$ARCH".AppImage
 export DESKTOP=/usr/share/applications/com.github.flxzt.rnote.desktop
@@ -29,11 +29,6 @@ find ./AppDir/share/locale -type f ! -name '*glib*' ! -name '*rnote*' -delete
 
 ## Set gsettings to save to keyfile, instead to dconf
 echo "GSETTINGS_BACKEND=keyfile" >> ./AppDir/.env
-
-# MAKE APPIMAGE WITH URUNTIME
-wget --retry-connrefused --tries=30 "$URUNTIME" -O ./uruntime2appimage
-chmod +x ./uruntime2appimage
-./uruntime2appimage
 
 # PREPARE APPIMAGE FOR RELEASE
 mkdir -p ./dist
