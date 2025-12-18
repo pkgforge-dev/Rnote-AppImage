@@ -11,7 +11,8 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/scalable/apps/com.github.flxzt.rnote.svg
 export DESKTOP=/usr/share/applications/com.github.flxzt.rnote.desktop
 export DEPLOY_OPENGL=1
-export STARTUPWMCLASS=rnote # For Wayland, this is 'com.github.flxzt.rnote', so this needs to be changed in desktop file manually by the user in that case until some potential automatic fix exists for this
+export STARTUPWMCLASS=rnote
+export GTK_CLASS_FIX=1
 
 # Trace and deploy all files and directories needed for the application (including binaries, libraries and others)
 quick-sharun /usr/bin/rnote \
