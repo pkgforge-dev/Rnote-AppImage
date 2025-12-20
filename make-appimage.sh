@@ -11,7 +11,6 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/scalable/apps/com.github.flxzt.rnote.svg
 export DESKTOP=/usr/share/applications/com.github.flxzt.rnote.desktop
 export DEPLOY_OPENGL=1
-export STARTUPWMCLASS=rnote
 export GTK_CLASS_FIX=1
 
 # Trace and deploy all files and directories needed for the application (including binaries, libraries and others)
