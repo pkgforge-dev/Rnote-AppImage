@@ -1,3 +1,5 @@
+<div align="center">
+
 # Rnote AppImage 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Rnote-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Rnote-AppImage/releases/latest)
@@ -8,7 +10,11 @@
   <img src="https://raw.githubusercontent.com/flxzt/rnote/refs/heads/main/crates/rnote-ui/data/icons/scalable/apps/rnote.svg" width="128" />
 </p>
 
-* [Upstream URL](https://rnote.flxzt.net/)
+| Latest Stable Release | Upstream URL |
+| :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/Rnote-AppImage/releases/latest) | [Click here](https://rnote.flxzt.net/) |
+
+</div>
 
 ---
 
