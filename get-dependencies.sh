@@ -6,8 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-# Cannot build Rust apps with llvm-libs-mini
-get-debloated-pkgs --add-common --prefer-nano ! llvm-libs
+get-debloated-pkgs --add-common --prefer-nano
 
 echo "Building package and its dependencies..."
 echo "---------------------------------------------------------------"
